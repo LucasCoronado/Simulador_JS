@@ -10,8 +10,8 @@ class Producto {
     return precioFinal;
   }
 }
-
-const articulo = prompt(
+let precio 
+let articulo = prompt(
   "Elegi una prenda: \n  Remera   \n  Pantalon   \n  Campera "
 );
 
@@ -19,22 +19,23 @@ const articulo = prompt(
 
 //const precio = parseInt(prompt("Ingrese el precio del producto elegido"));
 
-const precio = 1;
 
-if ((articulo = "Remera") || (articulo = "remera")) {
+
+if ((articulo === "Remera") || (articulo === "remera")) {
     precio = 600
     alert("El valor de la remera es $600"); 
 } 
-  else if ((articulo = Pantalon) || (articulo = pantalon)){
+  else if ((articulo === "Pantalon") || (articulo === "pantalon")){
     precio = 550
     alert("El valor del pantalon es $550");  
 }
-  else if ((articulo = Campera) || (articulo = campera)){
+  else if ((articulo === "Campera") || (articulo === "campera")){
     precio = 350
     alert("El valor de la campera es $350");
 }
 else {
   alert("El producto no es valido");
+  window.location.reload();
 }
 
 const talle = prompt("Seleccione el talle: \n S  \n M  \n L  \n XL");
