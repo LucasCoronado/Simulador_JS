@@ -10,16 +10,12 @@ class Producto {
     return precioFinal;
   }
 }
+
 let precio 
+
 let articulo = prompt(
   "Elegi una prenda: \n  Remera   \n  Pantalon   \n  Campera "
 );
-
-
-
-//const precio = parseInt(prompt("Ingrese el precio del producto elegido"));
-
-
 
 if ((articulo === "Remera") || (articulo === "remera")) {
     precio = 600
