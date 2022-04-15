@@ -6,12 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    
+
 
 </head>
 
 <body>
-    
+
+    <div>
+        <p>
+            Elija una prenda
+        </p>
+        <select id="prenda">
+            <option value="800">Remera</option>
+            <option value="1500">Pantalon</option>
+            <option value="3000">Campera</option>
+        </select>
+    </div>
+    <div>
+        <p>
+            Seleccione el talle
+        </p>
+        <select id="talle">
+            <option value="1">XS</option>
+            <option value="2">S</option>
+            <option value="3">M</option>
+            <option value="4">L</option>
+            <option value="5">XL</option>
+        </select>
+    </div>
+    <div>
+        <p>
+            Cuantos desea ?
+        </p>
+        <input type="number" class="cantidad" id="cantidad">
+    </div>
+    <button type="button" id="button" value="Calcular total">Calcular Precio</button>
+    <div>
+        <p class="total"><input type="text" id="resultado"></p>
+    </div>
+
     <script src="./desafio.js"></script>
 </body>
 
