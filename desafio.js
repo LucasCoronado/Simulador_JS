@@ -3,14 +3,10 @@ let nombre = prompt("Ingrese su nombre");
 saludar();
 
 class Producto {
-  constructor(articulo, talle, precio) {
-    this.articulo = articulo;
+  constructor(prenda, talle, cantidad) {
+    this.prenda = prenda;
     this.talle = talle;
-    this.precio = precio;
-  }
-  calcularIva() {
-    let precioFinal = this.precio * 1.21;
-    return precioFinal;
+    this.cantidad = cantidad;
   }
 }
 
@@ -20,41 +16,20 @@ function saludar() {
   );
 }
 
-let precio
+let boton = document.getElementById("button");
+boton.addEventListener("click", cargarArticulo);
 
-let articulo = prompt(
-  "Elegi una prenda: \n  Remera   \n  Pantalon   \n  Campera "
-);
-
-if ((articulo === "Remera") || (articulo === "remera")) {
-  precio = 600
-  alert("El valor de la remera es $600");
-}
-else if ((articulo === "Pantalon") || (articulo === "pantalon")) {
-  precio = 550
-  alert("El valor del pantalon es $550");
-}
-else if ((articulo === "Campera") || (articulo === "campera")) {
-  precio = 350
-  alert("El valor de la campera es $350");
-}
-else {
-  alert("El producto no es valido");
-  window.location.reload();
+function cargarArticulo() {
+  let prenda = parseInt(document.getElementById("prenda").value);
+  let talle = parseInt(document.getElementById("talle").value);
+  let cantidad = parseInt(document.getElementById("cantidad").value);
+  let producto1 = new Producto(prenda, talle, cantidad);
+  mostrarTotal(producto1);
 }
 
-const talle = prompt("Seleccione el talle: \n S  \n M  \n L  \n XL");
+function mostrarTotal(producto1) {
+  let suma = `Total $ ${producto1.prenda * producto1.talle * producto1.cantidad}`;
+  document.getElementById("resultado").value = suma;
+  
+}
 
-const productoComprado = new Producto(articulo, talle, precio);
-
-const arrayProducto = [];
-
-arrayProducto.push(nombre);
-arrayProducto.push(articulo);
-arrayProducto.push(talle);
-arrayProducto.push(precio);
-console.log(arrayProducto);
-
-alert(`Gracias por su compra, usted adquirio un/a  ${productoComprado.articulo}
-en talle ${productoComprado.talle}, 
-el precio final es de ${productoComprado.calcularIva()}`);
