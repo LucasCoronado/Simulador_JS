@@ -1,0 +1,29 @@
+/* * {
+    padding: 0px;
+    margin: 0px;
+} */
+
+body {
+    background-color: #f76565;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+div {
+    margin: 2px;
+    padding: 5px;
+    text-align: center;
+}
+
+.total{
+    display: inline-flex;
+    align-items: center;
+}
+
+button {
+    font-family: 'Courier New', Courier, monospace;
+}

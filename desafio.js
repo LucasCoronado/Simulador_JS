@@ -1,5 +1,23 @@
+function saludar() {
+  const usuario = localStorage.getItem("nombreUsuario")
+  
+  let nombre
 
-let nombre = prompt("Ingrese su nombre");
+  if ((usuario === null) || (usuario === "")) {
+    nombre = prompt("Ingrese su nombre");
+    localStorage.setItem("nombreUsuario", nombre)
+  }
+  else {
+    // alert(
+    //   `Hola ${usuario} bienvenido/a a la tienda`
+    // );
+    let saludo = document.getElementById("saludo")
+    saludo.innerText = `Hola ${usuario} bienvenido/a a la tienda`
+  }
+
+
+}
+
 saludar();
 
 class Producto {
@@ -10,11 +28,7 @@ class Producto {
   }
 }
 
-function saludar() {
-  alert(
-    `Hola ${nombre} bienvenido/a a la tienda`
-  );
-}
+
 
 let boton = document.getElementById("button");
 boton.addEventListener("click", cargarArticulo);
@@ -30,6 +44,6 @@ function cargarArticulo() {
 function mostrarTotal(producto1) {
   let suma = `Total $ ${producto1.prenda * producto1.talle * producto1.cantidad}`;
   document.getElementById("resultado").value = suma;
-  
+
 }
 
