@@ -2,15 +2,22 @@ function saludar() {
   const usuario = localStorage.getItem("nombreUsuario")
   
   let nombre
-
+  
   if ((usuario === null) || (usuario === "")) {
-    nombre = prompt("Ingrese su nombre");
-    localStorage.setItem("nombreUsuario", nombre)
+     Swal.fire({
+      title: "Ingrese su nombre",
+      input: "text",
+      confirmButtonText: "Aceptar",
+      
+    }).then((nombre) => {
+      if (nombre.isConfirmed) {
+        const enJSON = JSON.stringify(nombre.value)
+        localStorage.setItem("nombreUsuario", enJSON)
+      }
+    });
+
   }
   else {
-    // alert(
-    //   `Hola ${usuario} bienvenido/a a la tienda`
-    // );
     let saludo = document.getElementById("saludo")
     saludo.innerText = `Hola ${usuario} bienvenido/a a la tienda`
   }
@@ -42,8 +49,7 @@ function cargarArticulo() {
 }
 
 function mostrarTotal(producto1) {
-  let suma = `Total $ ${producto1.prenda * producto1.talle * producto1.cantidad}`;
-  document.getElementById("resultado").value = suma;
-
+  let suma = `El total de la compra es  \n $ ${producto1.prenda * producto1.talle * producto1.cantidad}`;
+  Swal.fire(suma)
 }
 
