@@ -27,3 +27,15 @@ div {
 button {
     font-family: 'Courier New', Courier, monospace;
 }
+
+#lista {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    align-content: space-around;
+}
+
+#lista div {
+    border: 1px solid white;
+    border-radius: 20px;
+}

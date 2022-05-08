@@ -15,7 +15,6 @@ function saludar() {
         localStorage.setItem("nombreUsuario", enJSON)
       }
     });
-
   }
   else {
     let saludo = document.getElementById("saludo")
@@ -53,3 +52,21 @@ function mostrarTotal(producto1) {
   Swal.fire(suma)
 }
 
+const lista = document.querySelector('#lista');
+
+fetch("./productos.json")
+  .then((res) => res.json())
+  .then((data) => {
+    data.forEach((producto) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+                <div><h4>${producto.nombre}</h4></div>
+                <div>${producto.precio}</div>
+               
+            `;
+
+      lista.append(li);
+    });
+  });
+
+console.log(fetch("./productos.json"));
